@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 import {Location} from "@angular/common";
 import {Person} from "../../star-wars-models/star-wars-person.model";
 import {RouterStateService} from "../../services/router-state.service";
@@ -26,6 +26,7 @@ export class StarWarsPeopleDetailComponent implements OnInit {
   public vehicles$: Observable<Vehicle[]>;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private location: Location,
     private routerStateService: RouterStateService,
@@ -42,6 +43,10 @@ export class StarWarsPeopleDetailComponent implements OnInit {
     this.species$ = this.getSpecies();
     this.starships$ = this.getStarship();
     this.vehicles$ = this.getVehicles();
+  }
+
+  public back(): void {
+    void this.router.navigate(['../']);
   }
 
   private getPerson(id: string): Observable<Person> {

@@ -7,20 +7,24 @@ import {StarWarsPeopleRoutingModule} from "./star-wars-people-routing.module";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { InfiniteScrollModule } from 'ngx-infinite-scroll' ;
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     StarWarsPeopleListComponent,
     StarWarsPeopleDetailComponent
   ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    StarWarsPeopleRoutingModule,
-    InfiniteScrollModule,
-    MatButtonModule,
-    MatTooltipModule,
-  ]
+    imports: [
+        CommonModule,
+        MatCardModule,
+        StarWarsPeopleRoutingModule,
+        InfiniteScrollModule,
+        MatButtonModule,
+        MatTooltipModule,
+        MatProgressSpinnerModule,
+        MatIconModule,
+    ]
 })
 export class StarWarsPeopleModule {
 

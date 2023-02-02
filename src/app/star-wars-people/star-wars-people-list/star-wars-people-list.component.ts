@@ -12,9 +12,9 @@ import {RouterStateService} from "../../services/router-state.service";
   styleUrls: ['./star-wars-people-list.component.scss']
 })
 export class StarWarsPeopleListComponent implements OnInit{
-  public people: Person[];
-
+  public people: Person[] = [];
   public nextPage: number;
+  public spinnerLoading: boolean = false;
 
   constructor(
     private router: Router,
@@ -24,10 +24,13 @@ export class StarWarsPeopleListComponent implements OnInit{
   }
 
   public onScroll(): void {
+    console.log('onScroll');
     if (this.nextPage) {
+      this.spinnerLoading = true;
       this.dataService.getPeopleData(this.nextPage).subscribe((peopleData) => {
         this.people.push(...peopleData.data);
         this.nextPage = peopleData.nextPage;
+        this.spinnerLoading = false;
       });
     }
   }
@@ -38,7 +41,7 @@ export class StarWarsPeopleListComponent implements OnInit{
 
   public navigateToDetail(person: Person): void {
     this.routerStateService.setOpenedPerson(person.id, person);
-    this.router.navigate(['detail', person.id], {state: {person}});
+    void this.router.navigate(['detail', person.id], {state: {person}});
   }
 
   private getPeopleData(page: number = 1): void {

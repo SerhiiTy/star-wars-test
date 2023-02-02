@@ -1,4 +1,8 @@
 <div class="star-wars-people-detail">
+  <button mat-button (click)="back()">
+    <mat-icon>arrow_left</mat-icon> Back
+  </button>
+
 
   <h2>Character:</h2>
   <div *ngIf="person$ | async as person" class="star-wars-people-detail-mat-card-container">

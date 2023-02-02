@@ -1,17 +1,22 @@
-<h1 class="title">Star Wars Characters List</h1>
 <div
   class="star-wars-people"
   infinite-scroll
-  [infiniteScrollDistance]="2"
+  [infiniteScrollDistance]="1"
   [infiniteScrollThrottle]="5"
   (scrolled)="onScroll()"
 >
-<mat-card *ngFor="let person of people" class="star-wars-person-card" matTooltip="See Details" (click)="navigateToDetail(person)">
-  <mat-card-content class="star-wars-person-card-header">
-    <mat-card-title class="star-wars-person-card-title">{{person.name}}</mat-card-title>
-  </mat-card-content>
-</mat-card>
+  <ng-container *ngFor="let person of people">
+    <mat-card class="star-wars-person-card" matTooltip="See Details" (click)="navigateToDetail(person)">
+      <mat-card-content class="star-wars-person-card-header">
+        <mat-card-title class="star-wars-person-card-title">{{person.name}}</mat-card-title>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+  <div class="spinner">
+    <mat-spinner *ngIf="!people || spinnerLoading"></mat-spinner>
+  </div>
 </div>
+
 
 
 

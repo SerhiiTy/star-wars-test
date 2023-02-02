@@ -24,7 +24,6 @@ export class StarWarsPeopleListComponent implements OnInit{
   }
 
   public onScroll(): void {
-    console.log('onScroll');
     if (this.nextPage) {
       this.spinnerLoading = true;
       this.dataService.getPeopleData(this.nextPage).subscribe((peopleData) => {

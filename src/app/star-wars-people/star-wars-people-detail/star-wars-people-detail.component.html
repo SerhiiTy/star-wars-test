@@ -1,0 +1,114 @@
+<div class="star-wars-people-detail">
+
+  <h2>Character:</h2>
+  <div *ngIf="person$ | async as person" class="star-wars-people-detail-mat-card-container">
+    <mat-card class="star-wars-people-detail-mat-card">
+      <mat-card-title>Name: {{person?.name}}</mat-card-title>
+      <mat-card-content>
+        <div>Height: {{person?.height}}</div>
+        <div>Mass: {{person?.mass}}</div>
+        <div>Gender: {{person?.gender}}</div>
+        <div>Hair Color: {{person?.hair_color}}</div>
+        <div>Skin Color: {{person?.skin_color}}</div>
+        <div>Eye color: {{person?.eye_color}}</div>
+        <div>Birth year: {{person?.birth_year}}</div>
+        <div>Created: {{person?.created | date}}</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <h2>Home Planet:</h2>
+  <div *ngIf="planet$ | async as planet" class="star-wars-people-detail-mat-card-container">
+    <mat-card class="star-wars-people-detail-mat-card">
+      <mat-card-title>Name: {{planet?.name}}</mat-card-title>
+      <mat-card-content>
+        <div>Rotation period: {{planet?.rotation_period}}</div>
+        <div>Orbital period: {{planet?.orbital_period}}</div>
+        <div>Diameter: {{planet?.diameter}}</div>
+        <div>Climate: {{planet?.climate}}</div>
+        <div>Gravity: {{planet?.gravity}}</div>
+        <div>Terrain: {{planet?.terrain}}</div>
+        <div>Surface water: {{planet?.surface_water}}</div>
+        <div>Population: {{planet?.population}}</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <h2>Films:</h2>
+  <div *ngIf="films$ | async as films" class="star-wars-people-detail-mat-card-container">
+    <div *ngFor="let film of films">
+      <mat-card class="star-wars-people-detail-mat-card star-wars-people-detail-mat-card-films">
+        <mat-card-title>Name: {{film?.title}}</mat-card-title>
+        <mat-card-content>
+          <div>Episode Id: {{film?.episode_id}}</div>
+          <div>Opening Crawl: {{film?.opening_crawl}}</div>
+          <div>Director: {{film?.director}}</div>
+          <div>Producer: {{film?.producer}}</div>
+          <div>Release Date: {{film?.release_date}}</div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <h2>Species:</h2>
+  <div *ngIf="species$ | async as species" class="star-wars-people-detail-mat-card-container">
+    <div *ngFor="let specie of species">
+      <mat-card class="star-wars-people-detail-mat-card">
+        <mat-card-title>Name: {{specie?.name}}</mat-card-title>
+        <mat-card-content>
+          <div>Classification: {{specie?.classification}}</div>
+          <div>Designation: {{specie?.designation}}</div>
+          <div>Average_height: {{specie?.average_height}}</div>
+          <div>Skin colors: {{specie?.skin_colors}}</div>
+          <div>Hair colors: {{specie?.hair_colors}}</div>
+          <div>Eye colors: {{specie?.eye_colors}}</div>
+          <div>Average lifespan: {{specie?.average_lifespan}}</div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <h2>Starships:</h2>
+  <div *ngIf="starships$ | async as starships" class="star-wars-people-detail-mat-card-container">
+    <div *ngFor="let starship of starships">
+      <mat-card class="star-wars-people-detail-mat-card star-wars-people-detail-mat-card-starships">
+        <mat-card-title>Name: {{starship?.name}}</mat-card-title>
+        <mat-card-content>
+          <div>Model: {{starship?.model}}</div>
+          <div>Manufacturer: {{starship?.manufacturer}}</div>
+          <div>Cost in credits: {{starship?.cost_in_credits}}</div>
+          <div>Length: {{starship?.length}}</div>
+          <div>Max Atmosphering Speed: {{starship?.max_atmosphering_speed}}</div>
+          <div>Crew: {{starship?.crew}}</div>
+          <div>Passengers: {{starship?.passengers}}</div>
+          <div>Cargo capacity: {{starship?.cargo_capacity}}</div>
+          <div>Consumables: {{starship?.consumables}}</div>
+          <div>Hyperdrive Rating: {{starship?.hyperdrive_rating}}</div>
+          <div>MGLT: {{starship?.MGLT}}</div>
+          <div>Starship Class: {{starship?.starship_class}}</div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <h2>Vehicles:</h2>
+  <div *ngIf="vehicles$ | async as vehicles" class="star-wars-people-detail-mat-card-container">
+    <div *ngFor="let vehicle of vehicles">
+      <mat-card class="star-wars-people-detail-mat-card star-wars-people-detail-mat-card-vehicles">
+        <mat-card-title>Name: {{vehicle?.name}}</mat-card-title>
+        <mat-card-content>
+          <div>Model: {{vehicle?.model}}</div>
+          <div>Manufacturer: {{vehicle?.manufacturer}}</div>
+          <div>Cost in credits: {{vehicle?.cost_in_credits}}</div>
+          <div>Length: {{vehicle?.length}}</div>
+          <div>Max Atmosphering Speed: {{vehicle?.max_atmosphering_speed}}</div>
+          <div>Crew: {{vehicle?.crew}}</div>
+          <div>Passengers: {{vehicle?.passengers}}</div>
+          <div>Cargo capacity: {{vehicle?.cargo_capacity}}</div>
+          <div>Consumables: {{vehicle?.consumables}}</div>
+          <div>Vehicle Class: {{vehicle?.vehicle_class}}</div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

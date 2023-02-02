@@ -1,0 +1,23 @@
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.star-wars-person-card {
+  border: 1px solid black;
+  margin: 10px;
+  height: 80px;
+
+  .star-wars-person-card-header {
+    padding: 10px;
+  }
+}
+
+.star-wars-people {
+  :hover {
+    background-color: #c7c5c5;
+    cursor: pointer;
+  }
+}
+
+

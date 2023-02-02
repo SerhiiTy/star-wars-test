@@ -1,0 +1,17 @@
+<h1 class="title">Star Wars Characters List</h1>
+<div
+  class="star-wars-people"
+  infinite-scroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="5"
+  (scrolled)="onScroll()"
+>
+<mat-card *ngFor="let person of people" class="star-wars-person-card" matTooltip="See Details" (click)="navigateToDetail(person)">
+  <mat-card-content class="star-wars-person-card-header">
+    <mat-card-title class="star-wars-person-card-title">{{person.name}}</mat-card-title>
+  </mat-card-content>
+</mat-card>
+</div>
+
+
+

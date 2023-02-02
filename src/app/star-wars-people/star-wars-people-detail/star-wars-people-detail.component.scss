@@ -1,0 +1,28 @@
+.star-wars-people-detail-mat-card {
+  border: 1px solid black;
+  padding: 0 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.star-wars-people-detail-mat-card-films {
+  height: 500px;
+}
+
+.star-wars-people-detail-mat-card-starships {
+  height: 350px;
+}
+
+.star-wars-people-detail-mat-card-vehicles {
+  height: 300px;
+}
+
+.star-wars-people-detail {
+  margin: 20px;
+}
+
+.star-wars-people-detail-mat-card-container {
+  display: flex;
+  flex-direction: row;
+}

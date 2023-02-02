@@ -5,7 +5,6 @@ import {Person} from "../../star-wars-models/star-wars-person.model";
 import {take} from "rxjs";
 import {RouterStateService} from "../../services/router-state.service";
 
-
 @Component({
   selector: 'app-star-wars-people-list',
   templateUrl: './star-wars-people-list.component.html',
@@ -20,8 +19,7 @@ export class StarWarsPeopleListComponent implements OnInit{
     private router: Router,
     private dataService: DataService,
     private routerStateService: RouterStateService,
-  ) {
-  }
+  ) {}
 
   public onScroll(): void {
     if (this.nextPage) {
